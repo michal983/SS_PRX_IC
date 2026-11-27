@@ -1,0 +1,43 @@
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
+from kivy.uix.button import Button
+from kivy.uix.textinput import TextInput
+
+
+class mojaApka(App):
+    def build(self):
+        plocha = BoxLayout(orientation="vertical")
+
+
+        input = BoxLayout(orientation="horizontal")
+        self.input1 = TextInput(hint_text = "Zadaj číslo:", multiline = False )
+        input.add_widget(self.input1)
+
+        tlacidlo_plus = Button(text = "+",
+                        size_hint = (None, None),
+                        size = (50,50),
+                        pos_hint = {"center_y":0.5})
+        input.add_widget(tlacidlo_plus)
+
+        self.input2 = TextInpu(hint_text = "Zadaj číslo", multiline = False)
+        input.add_widget(self.input2)
+        plocha.add_widget(input)
+
+        tlacidlo_vysledok = Button(text="Vypočítaj", )
+        plocha.add_widget(input)
+
+
+        return plocha
+
+    def klik(self,kto_zavolal):
+        text1 = self.input1.text
+        if text1.isdigit:
+            cislo1 = int (text1)
+            cislo = int(text1)
+        if text2. isdigit:
+
+            else: self.label_vysledok.text = text1 + text2
+
+
+mojaApka().run()
